@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use DB;
 
 class CourseController extends Controller
 {
@@ -14,7 +15,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all()->toArray();
+        $courses = Course::all();
         return view('auth.course.courses', compact('courses'));
     }
 
@@ -36,8 +37,11 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Course::Create($request);
-        return view('auth.course.create');
+        $data  = new Course;
+        $data->cname = request('cname');
+        $data->save();
+       // $data = Course::create($request);
+       return redirect('/course');
     }
 
     /**
@@ -59,8 +63,8 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $course = Course::find($id);
-        return view('auth.course.edit',compact('course','cid'));
+        $course = Course::where('cid', $id)->first();
+        return view('auth.course.edit',compact('course'));
     }
 
     /**
@@ -72,7 +76,12 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       // Course::where('cid', $id)->update($request);
+        $data  = new Course;
+        $data->cname = request('cname');
+        DB::update('update courses set cname = ? where cid = ?',[$data->cname,$id]);
+        //$data = where('cid', $id)->save();
+        return redirect('/course');
     }
 
     /**
@@ -83,6 +92,7 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from courses where cid  = ?',[$id]);
+        return redirect('/course');
     }
 }
