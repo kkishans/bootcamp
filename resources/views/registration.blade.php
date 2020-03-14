@@ -11,10 +11,10 @@
 				<div class="card-body">
 					<div class="form-group row">
 
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-12">
 			         	<input type="text" name="fname"  class="form-control" required autofocus placeholder="First Name">
 			 		</div>   
-			 		<div class="col-md-6">
+			 		<div class="col-md-6 col-sm-12">
 			          		<input type="text"  class="form-control" name="lname" required placeholder="Last Name">
 			   		 </div>
 			    </div>

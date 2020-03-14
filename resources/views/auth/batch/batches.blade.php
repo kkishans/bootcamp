@@ -4,13 +4,13 @@
 
 <div class="container" id="#personal" >
 	<div align="center">
-		
+		<
 		<div class="card col-md-12 col-sm-10 col-xl-10 col-lg-10 justify-content-center text-center">
 		<br>				
 			<div class="row">
-				<div class="col-8"> <h1>All Courses</h1></div>
+				<div class="col-8"> <h1>All Batches</h1></div>
 				<div class="col-sm-3 text-right">
-					<a class="btn btn-outline-primary " href="{{ route('addcourse')}}" >Add Course </a>
+					<a class="btn btn-outline-primary " href="{{ route('addcourse')}}" >Add Batches </a>
 				</div>
 			</div>
 
@@ -18,7 +18,7 @@
 		<table class="table table-bordered">
 			
 			<tr>
-				<th class="table">Course Id</th>
+				<th>Course Id</th>
 				<th>Course Name</th>
 				<th>Update</th>
 				<th>delete</th>
