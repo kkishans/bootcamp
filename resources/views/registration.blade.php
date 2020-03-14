@@ -1,84 +1,99 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container" id="#personal" >
 		<form action="#course" >
 			<div align="center">
 				<div class="card col-md-12 col-sm-10 col-xl-6 col-lg-6 justify-content-center">
 					<div class="card-head">
-						Register Your Information
+						Register Today!
 					</div>				
-					<div class="card-body">
-						<div class="form-group row">
-							<label class="col-sm-3 col-form-label label">Name : </label>
-							<div class="input-group col-sm-9">								
-							<input type="text" class="form-control textbox" name="fname" placeholder="first name" required="">
-							<input type="text" class="form-control textbox" name="lname" placeholder="last name" required="">
+				<div class="card-body">
+					<div class="form-group row">
 
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label class="col-sm-3 col-form-label label">Course : </label>
-							<div class="input-group col-sm-9">	
-							<select class="custom-select textbox">
-						  		<option selected>B Sc</option>
-						  		<option >B C A</option>
-							</select>
-						</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 col-form-label label">Semester : </label>
-							<div class="input-group col-sm-9">	
-							<select class="custom-select textbox">
-						  		<option selected>1</option>
-						  		<option >2</option>
-						  		<option >3</option>
-						  		<option >4</option>
-						  		<option >5</option>
-						  		<option >6</option>
-							</select>
-						</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-3 col-form-label label">Address :</label>
-							<div class="input-group col-sm-9">	
-							<textarea  class="form-control textbox" name="phone" placeholder="your address"  ></textarea>
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label class="col-sm-3 col-form-label label">Contact :</label>
-							<div class="input-group col-sm-9">	
-							<input type="number" class="form-control textbox" name="phone" placeholder="phone number" minlength="10"  size="10"  required="" >
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label class="col-sm-3 col-form-label label">E-mail :</label>
-							<div class="input-group col-sm-9">	
-							<input type="text" class="form-control textbox" name="mail" placeholder="e-mail address" required="" >
-						</div>
-						</div>
-
-						<div class="row col-12 form-check text-left text-center">
-							  <input class="form-check-input" type="checkbox" name="group_val" value="1">
-							  <label class="form-check-label from">
-							   Join me on YassClasses's Whatsup Group
-							  </label>
-							 
-						</div>
-
-						<div class="form-group col-12  row">
-							
-							<input type="submit" class="w-100 nav-btn" name="save" placeholder="e-mail address" value="Save & Next" required="">
-							<br><br>
-						</div>
-					</div>
+					<div class="col-md-6">
+			         	<input type="text" name="fname"  class="form-control" required autofocus placeholder="First Name">
+			 		</div>   
+			 		<div class="col-md-6">
+			          		<input type="text"  class="form-control" name="lname" required placeholder="Last Name">
+			   		 </div>
+			    </div>
+				<div class="form-group">
+		            <select class="form-control">
+					<option hidden >Courses</option>
+					<option> B.Sc </option>
+					<option> B.C.A </option> 
+					</select>
 				</div>
+			<div class="form-group">
+		            <select class="form-control">
+					<option hidden >Semester</option>
+					<option> First </option>
+					<option> Second </option> 
+					<option> Third </option> 
+					<option> Fourth </option> 
+					<option> Fifth </option> 
+					<option> Second </option> 
+					</select>
 			</div>
-		</form>
+		    
+		    	<div class="form-group">
+		       
+		         		<input type="text" class="form-control" name="mobnum" required placeholder="Mobile No">
+		         	</div>
+		         	
+
+		         	<div class="form-group">
+						<textarea class="placeholder-input form-control" placeholder="Address" required style="max-height: 66px; min-height: 66px;"></textarea>
+					</div>
+		         	
+		            <div class="form-group">
+		         
+		         		<input type="text"  class="form-control" name="mail" required placeholder="Email Id">	
+		         	</div>
+		         	<div class="int font-weight-bold font-italic m-sm-3 text-left">
+		         		<blockquote class="blockquote font-weight-bold text-left">
+		 					 <p class="mb-0">Interest In:</p>
+						</blockquote>
+						<div class="form-check">
+						  <label class="form-check-label">
+						    <input type="radio" class="form-check-input" name="optradio">C,C++ (14 Days)
+						  </label>
+						</div>
+						<div class="form-check">
+						  <label class="form-check-label">
+						    <input type="radio" class="form-check-input" name="optradio">HTML5, CSS3, JAVASCRIPT (14 Days)  <a class="" data-toggle="tooltip" data-placement="right" title="Basic"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+						  </label>
+						</div>
+						<div class="form-check">
+						  <label class="form-check-label">
+						    <input type="radio" class="form-check-input" name="optradio" >Python (14 Days)
+						  </label>
+						</div>
+						<div class="form-check">
+						  <label class="form-check-label">
+						    <input type="radio" class="form-check-input" name="optradio" >JQUERY, AJAX (14 Days)  <a  data-toggle="tooltip" data-placement="right" title="Advance"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+						  </label>
+						</div>
+		         	</div>
+		       
+		         	<div class="form-check-inline row">
+		         	
+					  <label class="form-check-label text-dark ">
+					    <input type="checkbox" class="form-check-input" value=""> <samp><kbd>I want to Join Yash's Coding Bootcamp Whatsapp Group</kbd></samp>
+					  </label>
+					</div>
+					<br><br>
+		         	<div class="form-group">
+		         		<input type="submit" class="btn-info form-control" name="join" value="Join">  
+		            </div>
+            </div>
+        </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
 
 @endsection

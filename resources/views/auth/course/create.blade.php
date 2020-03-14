@@ -1,6 +1,5 @@
-<!-- edit.blade.php -->
-
-@extends('auth.layout')
+<!-- create.blade.php -->
+@extends('views.layouts.app')
 
 @section('content')
 <style>
@@ -10,7 +9,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Edit Book
+    Add Book
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -22,16 +21,14 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('course.update', $book->id) }}">
+      <form method="post" action="{{ route('create') }}">
           <div class="form-group">
-               {{ csrf_field() }}
-              {{method_field('PATCH')}}
-
-              <label for="name">Book Name:</label>
-              <input type="text" class="form-control" name="book_name" value="{{$book->book_name}}"/>
+              {{ csrf_field() }}
+              <label for="name">Course Name:</label>
+              <input type="text" class="form-control" name="cname"/>
           </div>
           
-          <button type="submit" class="btn btn-primary">Update Course</button>
+          <button type="submit" class="btn btn-primary">Create Course</button>
       </form>
   </div>
 </div>

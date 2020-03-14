@@ -14,7 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::all()->toArray();
+        return view('auth.course.courses', compact('courses'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('auth.create');
+        return view('auth.course.create');
     }
 
     /**
@@ -36,7 +37,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $data = Course::Create($request);
-        return view('auth.index')->with($data,'Record inserted');
+        return view('auth.course.create');
     }
 
     /**
@@ -58,7 +59,8 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = Course::find($id);
+        return view('auth.course.edit',compact('course','cid'));
     }
 
     /**
