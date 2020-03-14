@@ -1,5 +1,5 @@
 <!-- create.blade.php -->
-@extends('views.layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <style>
@@ -21,7 +21,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('create') }}">
+      <form method="post" action="{{ route('course.store') }}">
           <div class="form-group">
               {{ csrf_field() }}
               <label for="name">Course Name:</label>

@@ -24,13 +24,12 @@ Route::get('/registration', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::resource('course', 'CourseController');
 
-Route::resource('/course','CourseController');
- 
-Route::get('/course','CourseController@index')->name('course'); 
-
-Route::get('/course/add', function () {
-    return view('auth.course.create');
-})->name('addcourse');
-
+Route::get('/home',[
+    'uses' => 'HomeController@index',
+    'as'   => 'home'
+]);
+ Route::group(['prefix'=>'admin','middleware'=>'auth'], function() {
+   Route::resource('course', 'CourseController');
+ });

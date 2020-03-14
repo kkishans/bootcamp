@@ -1,6 +1,6 @@
 <!-- edit.blade.php -->
 
-@extends('auth.layout')
+@extends('layouts.app')
 
 @section('content')
 <style>
@@ -22,13 +22,13 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('course.update', $book->id) }}">
+      <form method="post" action="{{ route('course.update', $course->cid) }}">
           <div class="form-group">
                {{ csrf_field() }}
               {{method_field('PATCH')}}
 
-              <label for="name">Book Name:</label>
-              <input type="text" class="form-control" name="book_name" value="{{$course->cname}}"/>
+              <label for="name">Course Name:</label>
+              <input type="text" class="form-control" name="cname" value="{{$course->cname}}"/>
           </div>
           
           <button type="submit" class="btn btn-primary">Update Course</button>

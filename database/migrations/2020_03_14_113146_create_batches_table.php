@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class Batch extends Migration
+class CreateBatchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class Batch extends Migration
      */
     public function up()
     {
-        Schema::create('batch', function (Blueprint $table) {
+        Schema::create('batches', function (Blueprint $table) {
             $table->bigIncrements('bid');
             $table->bigInteger('remaining_seats');
             $table->time('batch_time');
             $table->bigInteger('courseid');
-            // $table->foreign('courseid')->references('cid')->on('courses');
-
-            
         });
     }
 
@@ -31,6 +28,6 @@ class Batch extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('batches');
     }
 }

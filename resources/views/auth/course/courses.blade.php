@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-8"> <h1>All Courses</h1></div>
 	<div class="col-sm-3 text-right">
-		<a class="btn btn-outline-primary " href="{{ route('addcourse')}}" >Add Course </a>
+		<a class="btn btn-outline-primary " href="{{ route('course.create')}}" >Add Course </a>
 	</div>
 </div>
 
@@ -24,10 +24,17 @@
 		@foreach($courses as $c)
 
 		<tr>
-			<td>{{$c['cid']}}</td>
-			<td>{{ $c['cname']}}</td>
-			<td><a class="btn btn-outline-success" href="{{ action('CourseController@edit',$c['cid']) }}">Update</a></td>
-			<td><a class="btn btn-outline-danger">delete</a></td>
+			<td>{{$c->cid}}</td>
+			<td>{{ $c->cname}}</td>
+			<td><a class="btn btn-outline-success" href="{{ route('course.edit',$c->cid)}}">Update</a></td>
+			<td>
+				<form action="{{ route('course.destroy', $c->cid)}}" method="post">
+                   {{ csrf_field() }}
+                  {{method_field('DELETE')}}
+                    
+                  <button class="btn btn-outline-danger" type="submit">Delete</button>
+                </form>
+			</td>
 		</tr>
 
 		@endforeach
