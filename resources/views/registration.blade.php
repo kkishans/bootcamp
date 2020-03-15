@@ -61,22 +61,22 @@
 						</blockquote>
 						<div class="form-check">
 						  <label class="form-check-label">
-						    <input type="radio" class="form-check-input" name="optradio">C,C++ (14 Days)
+						    <input type="radio" class="form-check-input" name="optradio" value="C/C++">C,C++ (14 Days)
 						  </label>
 						</div>
 						<div class="form-check">
 						  <label class="form-check-label">
-						    <input type="radio" class="form-check-input" name="optradio">HTML5, CSS3, JAVASCRIPT (14 Days)  <a class="" data-toggle="tooltip" data-placement="right" title="Basic"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+						    <input type="radio" class="form-check-input" name="optradio" value="web development">HTML5, CSS3, JAVASCRIPT (14 Days)  <a class="" data-toggle="tooltip" data-placement="right" title="Basic"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
 						  </label>
 						</div>
 						<div class="form-check">
 						  <label class="form-check-label">
-						    <input type="radio" class="form-check-input" name="optradio" >Python (14 Days)
+						    <input type="radio" class="form-check-input" name="optradio" value="python">Python (14 Days)
 						  </label>
 						</div>
 						<div class="form-check">
 						  <label class="form-check-label">
-						    <input type="radio" class="form-check-input" name="optradio" >JQUERY, AJAX (14 Days)  <a  data-toggle="tooltip" data-placement="right" title="Advance"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+						    <input type="radio" class="form-check-input" name="optradio" value="jquery">JQUERY, AJAX (14 Days)  <a  data-toggle="tooltip" data-placement="right" title="Advance"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
 						  </label>
 						</div>
 		         	</div>
@@ -84,7 +84,7 @@
 		         	<div class="form-check-inline row">
 		         	
 					  <label class="form-check-label text-dark ">
-					    <input type="checkbox" class="form-check-input" name="joinGroup" value="0"> <samp><kbd>I want to Join Yash's Coding Bootcamp Whatsapp Group</kbd></samp>
+					    <input type="checkbox" class="form-check-input" name="joinGroup" value="1"> <samp><kbd>I want to Join Yash's Coding Bootcamp Whatsapp Group</kbd></samp>
 					  </label>
 					</div>
 					<br><br>

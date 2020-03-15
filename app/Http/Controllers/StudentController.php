@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Batch;
 use DB;
 
 class StudentController extends Controller
@@ -44,11 +45,13 @@ class StudentController extends Controller
         $data->address = request('address');
         $data->phone = request('mobnum');
         $data->email = request('mail');
-        $data->bid = 1;
-        if($request->get('featured') == null){
+        $cname = request('optradio');
+        $data->bid = DB::table('batches')->where('cname',$cname)->join('courses','courses.cid','=','batches.courseid')->value('bid');
+        DB::update("update batches set remaining_seats = remaining_seats - 1 where remaining_seats > 0 and bid = ? ",[$data->bid]);
+        if($request->get('joinGroup') == null){
             $data->join = 0;
           } else {
-            $data->join = request('featured');
+            $data->join = request('joinGroup');
           }
         $data->save();
 
