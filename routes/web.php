@@ -33,5 +33,5 @@ Route::get('/home',[
 ]);
  Route::group(['prefix'=>'admin','middleware'=>'auth'], function() {
    Route::resource('course', 'CourseController');
-   //Route::resource('')
+   Route::resource('batch', 'BatchController');
  });

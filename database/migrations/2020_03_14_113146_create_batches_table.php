@@ -15,9 +15,11 @@ class CreateBatchesTable extends Migration
     {
         Schema::create('batches', function (Blueprint $table) {
             $table->bigIncrements('bid');
+            $table->bigInteger('total_seats');
             $table->bigInteger('remaining_seats');
             $table->time('batch_time');
             $table->bigInteger('courseid');
+            $table->timestamps();
         });
     }
 
