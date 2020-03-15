@@ -13,7 +13,7 @@
 				<a class="btn btn-outline-primary " href="{{ route('course.create')}}" >Add Course </a>
 			</div>
 			</div>	
-			<hr>
+			
 <div class="card-body">
 	<table class="table table-striped ">
 		@if(sizeof($courses) > 0)
