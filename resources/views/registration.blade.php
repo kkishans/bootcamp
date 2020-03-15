@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container"  >
-		<form action="#course" >
+
+<div class="container" id="#personal" >
+		<form action="{{ route('student.store') }}" method="post">
+		{{ csrf_field() }}
+
 			<div align="center">
 				<div class="card col-md-12 col-sm-10 col-xl-6 col-lg-6 justify-content-center">
 					<div class="card-head">
@@ -18,15 +21,16 @@
 			          		<input type="text"  class="form-control" name="lname" required placeholder="Last Name">
 			   		 </div>
 			    </div>
+				
 				<div class="form-group">
-		            <select class="form-control">
+		            <select name="course" class="form-control">
 					<option hidden >Courses</option>
 					<option> B.Sc </option>
 					<option> B.C.A </option> 
 					</select>
 				</div>
 			<div class="form-group">
-		            <select class="form-control">
+		            <select name="sem" class="form-control">
 					<option hidden >Semester</option>
 					<option> First </option>
 					<option> Second </option> 
@@ -44,7 +48,7 @@
 		         	
 
 		         	<div class="form-group">
-						<textarea class="placeholder-input form-control" placeholder="Address" required style="max-height: 66px; min-height: 66px;"></textarea>
+						<textarea name="address" class="placeholder-input form-control" placeholder="Address" required style="max-height: 66px; min-height: 66px;"></textarea>
 					</div>
 		         	
 		            <div class="form-group">
@@ -80,7 +84,7 @@
 		         	<div class="form-check-inline row">
 		         	
 					  <label class="form-check-label text-dark ">
-					    <input type="checkbox" class="form-check-input" value=""> <samp><kbd>I want to Join Yash's Coding Bootcamp Whatsapp Group</kbd></samp>
+					    <input type="checkbox" class="form-check-input" name="joinGroup" value="0"> <samp><kbd>I want to Join Yash's Coding Bootcamp Whatsapp Group</kbd></samp>
 					  </label>
 					</div>
 					<br><br>
