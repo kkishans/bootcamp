@@ -36,7 +36,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Student::create($request);
+        $data = new Student;
+        $data->fname = request('fname');
+        $data->lname = request('lname');
+        $data->course = request('course');
+        $data->sem = request('sem');
+        $data->address = request('address');
+        $data->phone = request('mobnum');
+        $data->email = request('mail');
+        $data->bid = 1;
+        if($request->get('featured') == null){
+            $data->join = 0;
+          } else {
+            $data->join = request('featured');
+          }
+        $data->save();
+
         return redirect('/registration');
     }
 

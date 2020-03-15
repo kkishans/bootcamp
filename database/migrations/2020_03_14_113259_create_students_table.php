@@ -24,6 +24,7 @@ class CreateStudentsTable extends Migration
             $table->string('email')->unique();
             $table->bigInteger('bid');
             $table->boolean('join');
+            $table->timestamps();
         });
     }
 
