@@ -15,16 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registration', function () {
-    return view('registration');
-})->name('registration');
+Route::get('/registration',[
+  'uses' => 'StudentController@index',
+  'as'   => 'registration'
+]);
 
 
   // --> bro will create countroller and add it frist and set all route as your required
 
 Auth::routes();
 
-//Route::resource('course', 'CourseController');
+Route::resource('student', 'StudentController');
 
 Route::get('/home',[
     'uses' => 'HomeController@index',
@@ -32,4 +33,5 @@ Route::get('/home',[
 ]);
  Route::group(['prefix'=>'admin','middleware'=>'auth'], function() {
    Route::resource('course', 'CourseController');
+   //Route::resource('')
  });

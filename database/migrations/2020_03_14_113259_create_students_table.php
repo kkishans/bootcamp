@@ -17,9 +17,13 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('sid');
             $table->string('fname');
             $table->string('lname');
+            $table->string('course');
+            $table->string('sem');
+            $table->string('address');
             $table->string('phone');
             $table->string('email')->unique();
             $table->bigInteger('bid');
+            $table->boolean('join');
         });
     }
 

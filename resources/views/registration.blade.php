@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container" id="#personal" >
-		<form action="#course" >
+		<form action="{{ route('student.store') }}" method="post">
+		{{ csrf_field() }}
 			<div align="center">
 				<div class="card col-md-12 col-sm-10 col-xl-6 col-lg-6 justify-content-center">
 					<div class="card-head">
@@ -18,6 +19,7 @@
 			          		<input type="text"  class="form-control" name="lname" required placeholder="Last Name">
 			   		 </div>
 			    </div>
+				
 				<div class="form-group">
 		            <select class="form-control">
 					<option hidden >Courses</option>
