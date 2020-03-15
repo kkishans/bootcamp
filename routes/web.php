@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/developers', function () {
+    return view('developers');
+});
+
 Route::get('/registration',[
   'uses' => 'StudentController@index',
   'as'   => 'registration'

@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     @yield('head')
 </head>
 <body>
     <div id="app">
@@ -40,7 +41,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                           <li class="nav-item">
-                                    <a class="nav-link" href="\">Developers</a>
+                                    <a class="nav-link" href="/developers">Developers</a>
                            </li>
                         @guest
                             <li class="nav-item">
@@ -75,7 +76,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    
+                                    <a class="dropdown-item" href="{{ route('home')}}">Dashborad</a>
                                 </div>
+
                             </li>
                         @endguest
                     </ul>
