@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
+use App\Batch;
 use DB;
-
-class CourseController extends Controller
+class BatchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
-        return view('auth.course.courses', compact('courses'));
+        $batches = Batch::all();
+        return view('auth.batch.batches',compact('batches'));    
     }
 
     /**
@@ -26,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('auth.course.create');
+        return view('auth.batch.create');
     }
 
     /**
@@ -37,11 +36,13 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $data  = new Course;
-        $data->cname = request('cname');
+        $data  = new Batch;
+        $data->total_seats = request('total_seat');
+        $data->remaining_seats = request('total_seat');
+        $data->batch_time = request('time');
+        $data->courseid = request('c_id');
         $data->save();
-       // $data = Course::create($request);
-       return redirect('/admin/course');
+       return redirect('/admin/batch');
     }
 
     /**
@@ -63,8 +64,8 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $course = Course::where('cid', $id)->first();
-        return view('auth.course.edit',compact('course'));
+        $batch = Batch::where('bid', $id)->first();
+        return view('auth.batch.edit',compact('batch'));
     }
 
     /**
@@ -76,12 +77,14 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-       // Course::where('cid', $id)->update($request);
-        $data  = new Course;
-        $data->cname = request('cname');
-        DB::update('update courses set cname = ? where cid = ?',[$data->cname,$id]);
-        //$data = where('cid', $id)->save();
-        return redirect('/admin/course');
+        $data  = new Batch;
+        $data->total_seats = request('total_seat');
+        $data->remaining_seats = request('total_seat');
+        $data->batch_time = request('time');
+        $data->courseid = request('c_id');
+        DB::update('update batches set total_seats = ? ,remaining_seats = ? ,
+                    batch_time = ? , courseid = ?  where bid = ?',[$data->total_seats,$data->remaining_seats,$data->batch_time,$data->courseid,$id]);
+        return redirect('/admin/batch');
     }
 
     /**
@@ -92,7 +95,7 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        DB::delete('delete from courses where cid  = ?',[$id]);
-        return redirect('/admin/course');
+        DB::delete('delete from batches where bid  = ?',[$id]);
+        return redirect('/admin/batch');
     }
 }

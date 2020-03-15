@@ -33,3 +33,6 @@ Route::get('/home',[
  Route::group(['prefix'=>'admin','middleware'=>'auth'], function() {
    Route::resource('course', 'CourseController');
  });
+  Route::group(['prefix'=>'admin','middleware'=>'auth'], function() {
+   Route::resource('batch', 'BatchController');
+ });
