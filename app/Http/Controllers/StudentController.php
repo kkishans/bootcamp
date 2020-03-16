@@ -47,13 +47,23 @@ class StudentController extends Controller
         $data->email = request('mail');
         $cname = request('optradio');
         $data->bid = DB::table('batches')->where('cname',$cname)->join('courses','courses.cid','=','batches.courseid')->value('bid');
-        DB::update("update batches set remaining_seats = remaining_seats - 1 where remaining_seats > 0 and bid = ? ",[$data->bid]);
+        $seats = DB::table('batches')->where('bid',$data->bid)->value('remaining_seats');
         if($request->get('joinGroup') == null){
             $data->join = 0;
           } else {
             $data->join = request('joinGroup');
           }
-        $data->save();
+        if($seats > 0)
+        {
+            DB::update("update batches set remaining_seats = remaining_seats - 1 where remaining_seats > 0 and bid = ? ",[$data->bid]);
+            $data->save();
+        }
+        else 
+        {
+            return back()->withError($request->input('course'). ' seats are full')->withInput();
+        }
+        
+        
 
         return redirect('/registration');
     }
