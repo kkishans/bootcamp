@@ -37,5 +37,7 @@ Route::get('/home',[
 ]);
  Route::group(['prefix'=>'admin','middleware'=>'auth'], function() {
    Route::resource('course', 'CourseController');
-   Route::resource('batch', 'BatchController');
+   Route::resource('seat', 'SeatController');
  });
+
+ Route::patch('admin/seat/{id}/up', 'SeatController@up');

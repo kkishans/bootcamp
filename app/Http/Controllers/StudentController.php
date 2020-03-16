@@ -53,6 +53,7 @@ class StudentController extends Controller
           } else {
             $data->join = request('joinGroup');
           }
+
         if($seats > 0)
         {
             DB::update("update batches set remaining_seats = remaining_seats - 1 where remaining_seats > 0 and bid = ? ",[$data->bid]);
