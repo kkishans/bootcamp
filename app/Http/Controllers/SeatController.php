@@ -99,9 +99,28 @@ class SeatController extends Controller
         return redirect('/admin/seat');
     }
 
+    /**
+     * Increment the seats from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function up($id)
     {
         DB::update('update seats set total_seats = total_seats + 1, available_seats = available_seats +1 where s_id = ?',[$id]);
         return redirect('/admin/seat');
     }
+
+    /**
+     * Decreament the seats from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function down($id)
+    {
+        DB::update('update seats set total_seats = total_seats - 1, available_seats = available_seats - 1 where s_id = ?',[$id]);
+        return redirect('/admin/seat');
+    }
+
 }

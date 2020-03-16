@@ -33,17 +33,24 @@
 			<tr>
 				<td>{{$s['cname']}}</td>
 				<td>{{ $s['total_seats']}}</td>
-				<td><form action="seat/{{$s->s_id}}/up" >
+				<td><form method="post"  action="{{ route('seat.up', $s->s_id) }}" >
 	                   {{ csrf_field() }}
-	                  {{method_field('PATCH')}}
+	                  	{{method_field('PATCH')}}
 	                    
 	                  <button class="btn btn-outline-primary" type="submit"> &uarr;</button>
 	                </form>
 	            </td>
-				<td><a href="#" class="btn btn-outline-info"> &darr;</a></td>
+				<td>
+					<form method="post"  action="{{ route('seat.down', $s->s_id) }}" >
+	                   {{ csrf_field() }}
+	                  	{{method_field('PATCH')}}
+	                    
+	                  <button class="btn btn-outline-primary" type="submit"> &darr;</button>
+	                </form>
+				</td>
 				<td>{{ $s['available_seats']}}</td>
 				<td>{{ $s['allocated_seats']}}</td>
-
+				
 			</tr>
 
 			@endforeach

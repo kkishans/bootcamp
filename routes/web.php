@@ -40,4 +40,5 @@ Route::get('/home',[
    Route::resource('seat', 'SeatController');
  });
 
- Route::patch('admin/seat/{id}/up', 'SeatController@up');
+ Route::patch('admin/seat/{id}/up', 'SeatController@up')->name('seat.up');
+ Route::patch('admin/seat/{id}/down', 'SeatController@down')->name('seat.down');
