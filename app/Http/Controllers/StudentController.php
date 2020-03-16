@@ -46,8 +46,8 @@ class StudentController extends Controller
         $data->phone = request('mobnum');
         $data->email = request('mail');
         $cname = request('optradio');
-        $data->bid = DB::table('batches')->where('cname',$cname)->join('courses','courses.cid','=','batches.courseid')->value('bid');
-        $seats = DB::table('batches')->where('bid',$data->bid)->value('remaining_seats');
+        $data->bid = DB::table('seats')->where('cname',$data->course)->value('s_id');
+        $seats = DB::table('seats')->where('cname',$data->course)->value('available_seats');
         if($request->get('joinGroup') == null){
             $data->join = 0;
           } else {
@@ -56,7 +56,7 @@ class StudentController extends Controller
 
         if($seats > 0)
         {
-            DB::update("update batches set remaining_seats = remaining_seats - 1 where remaining_seats > 0 and bid = ? ",[$data->bid]);
+            DB::update("update seats set available_seats = available_seats - 1 , allocated_seats = allocated_seats +1 where available_seats > 0 and s_id = ? ",[$data->bid]);
             $data->save();
         }
         else 

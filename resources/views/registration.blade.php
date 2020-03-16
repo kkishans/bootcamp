@@ -6,15 +6,9 @@
 		<form action="{{ route('student.store') }}" method="post">
 		{{ csrf_field() }}
 
-			@if ($errors->any())
-				<div class="alert alert-danger">
-					<ul>
-						@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div><br />
-			@endif
+		@if (session('error'))
+			<div class="alert alert-danger">{{ session('error') }}</div>
+		@endif
 
 			<div align="center">
 				<div class="card col-md-12 col-sm-10 col-xl-6 col-lg-6 justify-content-center">
@@ -35,8 +29,8 @@
 				<div class="form-group">
 		            <select name="course" class="form-control">
 					<option hidden >Course</option>
-					<option> B.Sc </option>
-					<option> B.C.A </option> 
+					<option> B.Sc. </option>
+					<option> B.C.A. </option> 
 					</select>
 				</div>
 			<div class="form-group">
