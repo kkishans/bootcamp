@@ -54,7 +54,6 @@ class StudentController extends Controller
             $data->join = request('joinGroup');
           }
         $data->save();
-
         return redirect('/registration');
     }
 

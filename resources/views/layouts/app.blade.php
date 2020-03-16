@@ -58,7 +58,7 @@
                                     <a class="nav-link" href="{{ route('course.index') }}">Courses</a>
                                 </li>
                              <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('batch.index') }}">Batches</a>
+                                    <a class="nav-link" href="{{ route('seat.index') }}">Seat Matrix</a>
                                 </li>
                                
                             <li class="nav-item dropdown">

@@ -105,8 +105,7 @@
 @section('content')
 	<section class="testimonial">
 			<div class="container">
-				<h1>Testimonial</h1>
-				<p class="text-center">Lethhub is best portal on web today</p>
+				<h1>Our Developers</h1>
 				<div class="row">
 					<div class="col-md-4 text-center">
 						<div class="profile">

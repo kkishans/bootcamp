@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Batch;
+use App\Seat;
 use DB;
-class BatchController extends Controller
+class SeatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class BatchController extends Controller
      */
     public function index()
     {
-        $batches = Batch::all();
-        return view('auth.batch.batches',compact('batches'));    
+        $seats = Seat::all();
+        return view('auth.seat.seats',compact('seats'));  
     }
 
     /**
@@ -25,7 +25,7 @@ class BatchController extends Controller
      */
     public function create()
     {
-        return view('auth.batch.create');
+         return view('auth.seat.create');
     }
 
     /**
@@ -36,13 +36,13 @@ class BatchController extends Controller
      */
     public function store(Request $request)
     {
-        $data  = new Batch;
+        $data  = new Seat;
+        $data->cname = request('cname');
         $data->total_seats = request('total_seat');
-        $data->remaining_seats = request('total_seat');
-        $data->batch_time = request('time');
-        $data->courseid = request('c_id');
+        $data->available_seats = request('total_seat');
+        $data->allocated_seats = 0;
         $data->save();
-       return redirect('/admin/batch');
+       return redirect('/admin/seat');
     }
 
     /**
@@ -64,8 +64,8 @@ class BatchController extends Controller
      */
     public function edit($id)
     {
-        $batch = Batch::where('bid', $id)->first();
-        return view('auth.batch.edit',compact('batch'));
+        $seat = Seat::where('s_id', $id)->first();
+        return view('auth.seat.edit',compact('seat'));
     }
 
     /**
@@ -77,14 +77,14 @@ class BatchController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data  = new Batch;
+        $data  = new Seat;
+        $dat->cname = request('cname');
         $data->total_seats = request('total_seat');
-        $data->remaining_seats = request('total_seat');
-        $data->batch_time = request('time');
-        $data->courseid = request('c_id');
-        DB::update('update batches set total_seats = ? ,remaining_seats = ? ,
-                    batch_time = ? , courseid = ?  where bid = ?',[$data->total_seats,$data->remaining_seats,$data->batch_time,$data->courseid,$id]);
-        return redirect('/admin/batch');
+        $data->available_seats = request('available_seats');
+        $dat->allocated_seats = request('allocated_seats');
+        DB::update('update batches set cname = ? , total_seats = ? , available_seats = ? ,
+                    allocated_seats = ?  where s_id = ?',[$data->cname , $data->total_seats,$data->available_seats,$data->allocated_seats,$id]);
+        return redirect('/admin/seat');
     }
 
     /**
@@ -95,7 +95,13 @@ class BatchController extends Controller
      */
     public function destroy($id)
     {
-        DB::delete('delete from batches where bid  = ?',[$id]);
-        return redirect('/admin/batch');
+         DB::delete('delete from seats where s_id  = ?',[$id]);
+        return redirect('/admin/seat');
+    }
+
+    public function up($id)
+    {
+        DB::update('update seats set total_seats = total_seats + 1, available_seats = available_seats +1 where s_id = ?',[$id]);
+        return redirect('/admin/seat');
     }
 }

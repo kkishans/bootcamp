@@ -24,7 +24,7 @@
 				
 				<div class="form-group">
 		            <select name="course" class="form-control">
-					<option hidden >Courses</option>
+					<option hidden >Course</option>
 					<option> B.Sc </option>
 					<option> B.C.A </option> 
 					</select>
