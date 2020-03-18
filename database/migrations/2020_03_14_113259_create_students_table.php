@@ -22,7 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('email')->unique();
-            $table->bigInteger('bid');
+            $table->string('language');
             $table->boolean('join');
             $table->timestamps();
         });
