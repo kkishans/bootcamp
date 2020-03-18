@@ -36,7 +36,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $data = new Student;
         $data->fname = request('fname');
         $data->lname = request('lname');
@@ -65,8 +65,8 @@ class StudentController extends Controller
         }
         
         
-
-        return redirect('/registration');
+        $email = $data->email;
+        return view('registered',compact('email'));
     }
 
     /**
@@ -75,9 +75,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($email)
     {
-        //
+         $student = Student::where('email', $email)->first();
+        return view('makepdf',compact('student'));
     }
 
     /**

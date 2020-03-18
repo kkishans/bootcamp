@@ -19,6 +19,13 @@ Route::get('/developers', function () {
     return view('developers');
 });
 
+Route::get('/ticket', function () {
+    return view('makepdf');
+});
+Route::get('/sucess', function () {
+    return view('registered');
+});
+
 Route::get('/registration',[
   'uses' => 'StudentController@index',
   'as'   => 'registration'
