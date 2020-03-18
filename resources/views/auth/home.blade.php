@@ -21,7 +21,7 @@
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Email-Address</th>
-                <th>Batch Id</th>
+                <th>Languaues</th>
                 <th>Allow W'Group</th>
             </tr>
             @foreach($students as $s)
@@ -33,7 +33,7 @@
                 <td>{{ $s->address}}</td>
                 <td>{{ $s->phone}}</td>
                 <td>{{ $s->email}}</td>
-                <td>{{ $s->bid}}</td>
+                <td>{{ $s->language}}</td>
                 @if($s->join == 0)
                 <td>No</td>
                 @else

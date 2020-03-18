@@ -77,7 +77,7 @@ class StudentController extends Controller
      */
     public function show($email)
     {
-         $student = Student::where('email', $email)->first();
+        $student = Student::where('email', $email)->first();
         return view('makepdf',compact('student'));
     }
 
