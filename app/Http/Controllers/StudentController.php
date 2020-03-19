@@ -47,7 +47,16 @@ class StudentController extends Controller
         $data->email = request('mail');
         $cname = request('optradio');
         $data->language = request('optradio');
+        $email = DB::table('students')->where('email',$data->email)->value('email');
         $seats = DB::table('seats')->where('cname',$data->course)->value('available_seats');
+
+        if ($data->language == null) {
+            return back()->withError('Please select language...')->withInput();
+        }
+
+        if ($email != null) {
+            return back()->withError($request->input('mail'). ' email already exists...')->withInput();
+        }
         if($request->get('joinGroup') == null){
             $data->join = 0;
           } else {
@@ -66,7 +75,7 @@ class StudentController extends Controller
         
         
         $email = $data->email;
-        return view('registered',compact('email'));
+        return view('registered',compact('data'));
     }
 
     /**

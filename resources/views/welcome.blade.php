@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container col-12 text-center">
-    <button class="btn btn-outline-primary my-btn"> <a href="{{ route('registration')}}">Register Me!</a></button>   
+    <a href="{{ route('registration')}}" class="btn btn-primary">Yes, I want to Join!</a></button>   
 </div>
 
 @endsection

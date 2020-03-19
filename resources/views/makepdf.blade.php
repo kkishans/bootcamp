@@ -9,63 +9,35 @@
 	 <script src="{{ asset('js/myscript.js') }}" defer></script>
 	 <script src="{{ asset('js/all.js') }}" defer></script>
 	 <script src="{{ asset('js/jspdf.js') }}" defer></script>
-</head>
-<body>
 
 <script type="text/javascript">
 	window.onload = function() 
 {
   HTMLtoPDF();
 };
-</script>
+</script >
+</head>
+<body id="HTMLtoPDF">
 
-<div id="H">
-<table width="60%" align="center" class="text-center" cellpadding="10" border="1" id="HTMLtoPDF" >
-	<tr>
-		<th colspan="4">
-			 <h1>Registration Confirmation Letter</h1>
-		</th>
-	</tr>
-	<tr>
-		<td  colspan="4">
-			<h3>YashClasses, Bharuch</h3>
-		</td>
-	</tr>
-	<tr>
-		<td  align="left" colspan="2">
-			Date : {{ date('d/m/y')}}
-		</td>
-		<td align="right" colspan="2">
-			Sr No. : {{ date('yy').$student['sid']}}
-		</td>
-	</tr>
-	<tr>
-		<td colspan="4">
-			<label>Name : {{ $student['fname']}} {{ $student['lname']}}</label>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="4">
-			Course :  {{ $student['course']}} {{ $student['sem']}} Sem
-		</td>
-	</tr>
-	<tr>
-		<td colspan="4">
-			E-mail : {{ $student['email'] }}
-		</td>
-	</tr>
-	<tr>
-		<td colspan="4">
-			Phone :{{ $student['phone'] }}
-		</td>
-	</tr>
-	<tr>
-		<td colspan="4">
-			Language :  {{ $student['language'] }}
-		</td>
-	</tr>
-</table>
+
+<div>
+	<div style="text-align: center;">
+			 <h1 align="center">Registration Confirmation Letter</h1>
+			<h3 align="center">YashClasses, Bharuch</h3>
+	</div>
+	<div style="margin-left: 10rem;">
+		<p>	Date : {{ date('d/m/y')}}</p>
+		<p>Sr No.   : {{ date('yy').$student['sid']}}</p>
+		<p>Name     : {{ $student['fname']}} {{ $student['lname']}}</p>
+		<p>Course   : {{ $student['course']}} {{ $student['sem']}} Sem</p>
+		<p>E-mail   : {{ $student['email'] }}</p>
+		<p>Phone    : {{ $student['phone'] }}</p>
+		<p>Language : {{ $student['language'] }}</p>
+	<div>
 </div>
 
+
 </body>
+
+</script>
 </html>

@@ -40,19 +40,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                          <li class="nav-item">
-                                    <a class="nav-link" href="/developers">Developers</a>
-                           </li>
                         @guest
-                            <li class="nav-item">
+                           <!--  <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                            </li> -->
                             @if (Route::has('register'))
                                
-                                <li class="nav-item">
+                              <!--   <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+ -->                            @endif
                         @else
                              <li class="nav-item">
                                     <a class="nav-link" href="{{ route('course.index') }}">Courses</a>
@@ -90,6 +87,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+    <div class="col-12">
+        <footer class="footer fixed-bottom text-right">
+            <a class="btn btn-primary  my-btn " href="/developers">Meet Developers</a>
+        </footer>
     </div>
 </body>
 </html>

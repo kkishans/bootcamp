@@ -109,7 +109,7 @@
 				<div class="row">
 					<div class="col-md-4 text-center">
 						<div class="profile">
-						<img src="img/kirtan.jpg" class="user">
+						<img src="img/kishan.jpg" class="user">
 						<blockquote>this is the founder and cheif executive of Lethhub of industries</blockquote>
 						<h3>Kishan <span>Founder & CEO of Lethhub</span></h3>
 						</div>

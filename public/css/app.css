@@ -11,3 +11,8 @@
 .card-head{
 	font-size: 35px;
 }
+.my-btn{
+	border-radius: 20px 0px 0px 20px;
+	font-size: 20px;
+	margin: 5px;
+}

@@ -27,7 +27,7 @@
 			    </div>
 				
 				<div class="form-group">
-		            <select name="course" class="form-control">
+		            <select name="course" class="form-control disabled" >
 					<option hidden >Course</option>
 					<option> B.Sc. </option>
 					<option> B.C.A. </option> 
@@ -35,19 +35,19 @@
 				</div>
 			<div class="form-group">
 		            <select name="sem" class="form-control">
-					<option hidden >Semester</option>
+					<option hidden class="disabled" >Semester</option>
 					<option> First </option>
 					<option> Second </option> 
 					<option> Third </option> 
 					<option> Fourth </option> 
 					<option> Fifth </option> 
-					<option> Second </option> 
+					<option> Sixth </option> 
 					</select>
 			</div>
 		    
 		    	<div class="form-group">
 		       
-		         		<input type="text" class="form-control" name="mobnum" required placeholder="Mobile No">
+		         		<input type="text" class="form-control" name="mobnum" required placeholder="Mobile No" pattern="^[6-9]\d{9}$" oninvalid="this.setCustomValidity('Enter Valid Phone Number')" oninput="this.setCustomValidity('')" onvalid="this.setCustomValidity('')">
 		         	</div>
 		         	
 
@@ -57,7 +57,7 @@
 		         	
 		            <div class="form-group">
 		         
-		         		<input type="text"  class="form-control" name="mail" required placeholder="Email Id">	
+		         		<input type="email"  class="form-control" name="mail" required placeholder="Email Id">	
 		         	</div>
 		         	<div class="int font-weight-bold font-italic m-sm-3 text-left">
 		         		<blockquote class="blockquote font-weight-bold text-left">
@@ -93,7 +93,7 @@
 					</div>
 					<br><br>
 		         	<div class="form-group">
-		         		<input type="submit" class="btn-info form-control" name="join" value="Join">  
+		         		<input type="submit" class="btn btn-info form-control" name="join" value="Join">  
 		            </div>
             </div>
         </div>
