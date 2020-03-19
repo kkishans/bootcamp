@@ -109,23 +109,45 @@
 				<div class="row">
 					<div class="col-md-4 text-center">
 						<div class="profile">
-						<img src="img/kishan.jpg" class="user">
-						<blockquote>this is the founder and cheif executive of Lethhub of industries</blockquote>
-						<h3>Kishan <span>Founder & CEO of Lethhub</span></h3>
+						<img src="{{ asset('img/kishan.jpg')}}" class="user">
+						<blockquote>
+							He is software developer as well as Web application developer.
+						</blockquote>
+						<blockquote>known languages are Python, C++, Java, Android, PHP,
+						SQL, JavaScript, HTML/CSS.</blockquote>
+						<blockquote>
+							he has knowledge of Bootstrap, Framework, Servlet, etc. 
+						</blockquote>
+						<h3>Kishan Khant<span> as junior Developer</span></h3>
 						</div>
 					</div>
 					<div class="col-md-4 text-center">
 						<div class="profile">
-						<img src="img/kirtan.jpg" class="user">
-						<blockquote>this is the founder and cheif executive of Lethhub of industries</blockquote>
-						<h3>Yash D Desai <span>Founder & CEO of Lethhub</span></h3>
+						<img src="{{ asset('img/yash.jpg')}}" class="user">
+						<blockquote>
+							He is software developer as well as Web application developer.
+						</blockquote>
+						<blockquote>Master in languages are Python, C++, Java, Android, PHP,
+						SQL, R, Ionic , JavaScript, HTML/CSS.</blockquote>
+						<blockquote>
+							Learns Bootstrap, Framework, Servlet. 
+						</blockquote>
+						<h3>Yash Desai <span> as senior Developer</span></h3>
 						</div>
 					</div>
 					<div class="col-md-4 text-center">
 						<div class="profile">
-						<img src="img/kirtan.jpg" class="user">
-						<blockquote>this is the founder and cheif executive of Lethhub of industries</blockquote>
-						<h3>Nikunj <span>Founder & CEO of Lethhub</span></h3>
+						<img src="{{ asset('img/nikunj.jpg')}}" class="user">
+					<blockquote>
+							He is software developer as well as Web application developer.
+						</blockquote>
+						<blockquote>known languages are Python, C++, Java, Android, PHP,
+						SQL, JavaScript, HTML/CSS.</blockquote>
+						<blockquote>
+							he has knowledge of Bootstrap, Framework, Servlet, etc. 
+						</blockquote>
+						<h3>Nikunj Thakor <span> as junior Developer</span></h3>
+						</div>
 						</div>
 					</div>
 				</div>
