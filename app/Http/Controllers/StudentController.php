@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Student;
 use App\Batch;
+use PDF;    
 use DB;
 
 class StudentController extends Controller
@@ -87,7 +89,9 @@ class StudentController extends Controller
     public function show($email)
     {
         $student = Student::where('email', $email)->first();
-        return view('makepdf',compact('student'));
+        //return view('makepdf',compact('student'));
+        $pdf = PDF::loadView('makepdf', compact('student'));  
+        return $pdf->download('Confirmation Ticket.pdf');
     }
 
     /**
